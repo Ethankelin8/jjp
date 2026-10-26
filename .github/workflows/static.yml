@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MD. SHAKIB AHMED - Wikipedia</title>
+<style>
+    /* === ORIGINAL WIKIPEDIA CSS VARIABLES === */
+    :root {
+        --color-base: #202122;
+        --color-base-fixed: #202122;
+        --color-emphasized: #000000;
+        --color-subtle: #54595d;
+        --color-progressive: #3366cc;
+        --color-progressive--hover: #447ff5;
+        --color-progressive--active: #2a4b8d;
+        --color-destructive: #d73333;
+        --color-success: #14866d;
+        --color-border: #a2a9b1;
+        --color-surface-0: #ffffff;
+        --color-surface-1: #f8f9fa;
+        --color-surface-2: #eaecf0;
+        --color-surface-3: #c8ccd1;
+        --font-family-serif: "Linux Libertine", "Georgia", "Times", serif;
+        --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        font-family: var(--font-family-sans);
+        background-color: var(--color-surface-0);
+        color: var(--color-base);
+        font-size: 16px;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* === LINKS === */
+    a {
+        color: var(--color-progressive);
+        text-decoration: none;
+    }
+    a:visited { color: #6b4ba1; }
+    a:active { background-color: var(--color-surface-2); }
+
+    /* === HEADER (STICKY TOP) === */
+    .minerva-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 54px;
+        padding: 0 16px;
+        background-color: var(--color-surface-0);
+        border-bottom: 1px solid var(--color-surface-2);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    .header-left, .header-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .icon-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+    }
+
+    .icon-btn svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--color-subtle);
+    }
+
+    /* Wikipedia Wordmark Logo */
+    .brand-logo {
+        display: flex;
+        align-items: center;
+        margin-left: 8px;
+    }
+    .brand-logo svg {
+        height: 20px;
+        width: auto;
+    }
+
+    /* === PAGE TITLE === */
+    .page-title-container {
+        padding: 16px 16px 8px;
+    }
+    h1 {
+        font-family: var(--font-family-serif);
+        font-size: 32px;
+        font-weight: normal;
+        color: var(--color-emphasized);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        line-height: 1.2;
+    }
+
+    /* Verified Logo */
+    .verified-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* === TABS (Article / Talk) === */
+    .page-tabs {
+        display: flex;
+        padding: 0 16px;
+        border-bottom: 1px solid var(--color-border);
+        margin-top: 4px;
+    }
+    .tab {
+        font-family: var(--font-family-sans);
+        font-size: 14px;
+        font-weight: bold;
+        color: var(--color-subtle);
+        padding: 10px 12px;
+        cursor: pointer;
+        position: relative;
+    }
+    .tab.active {
+        color: var(--color-base);
+    }
+    .tab.active::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-base);
+    }
+
+    /* === ACTION TOOLBAR (A/文, Bookmark, Edit, Download) === */
+    .page-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
+        border-bottom: 1px solid var(--color-surface-2);
+    }
+    .action-left {
+        font-size: 15px;
+        font-weight: bold;
+        color: var(--color-subtle);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-family: var(--font-family-serif);
+    }
+    .action-right {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    /* === HATNOTES === */
+    .hatnote {
+        padding: 12px 16px;
+        background-color: var(--color-surface-1);
+        border-bottom: 1px solid var(--color-surface-2);
+        font-size: 14px;
+        font-style: italic;
+        color: var(--color-base);
+    }
+    .hatnote p { margin-bottom: 6px; }
+    .hatnote p:last-child { margin-bottom: 0; }
+
+    /* === MAIN CONTENT AREA === */
+    .content {
+        padding: 16px;
+    }
+    .content p {
+        margin-bottom: 16px;
+        font-size: 16px;
+        color: var(--color-base);
+    }
+    .content b { font-weight: 700; }
+    .content sup {
+        font-size: 11px;
+        color: var(--color-progressive);
+        cursor: pointer;
+    }
+    
+    /* === INFOBOX === */
+    .infobox {
+        width: 100%;
+        background-color: var(--color-surface-1);
+        border: 1px solid var(--color-border);
+        border-collapse: collapse;
+        margin-bottom: 24px;
+        font-size: 14.5px;
+    }
+    .infobox th, .infobox td {
+        padding: 10px 12px;
+        vertical-align: top;
+        border-top: 1px solid var(--color-surface-2);
+        line-height: 1.4;
+        text-align: left;
+    }
+    .infobox th {
+        width: 35%;
+        font-weight: bold;
+        color: var(--color-base);
+    }
+    .infobox .title-row {
+        background-color: #d9d3c3; /* Original Wikipedia Infobox Header Color */
+        text-align: center;
+        font-family: var(--font-family-serif);
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px;
+        border-top: none;
+    }
+    .infobox .image-row {
+        text-align: center;
+        padding: 12px;
+        background-color: var(--color-surface-0);
+    }
+    .infobox .image-row img {
+        width: 180px;
+        max-width: 100%;
+        height: auto;
+        border: 1px solid var(--color-surface-3);
+    }
+    .infobox .caption {
+        font-size: 13px;
+        color: var(--color-subtle);
+        margin-top: 8px;
+        text-align: left;
+    }
+
+    /* Social Icons in Infobox */
+    .social-row {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 12px;
+        border-top: 1px solid var(--color-surface-2);
+        background-color: var(--color-surface-0);
+    }
+    .social-row a {
+        display: inline-flex;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-surface-3);
+        background-color: var(--color-surface-0);
+    }
+    .social-row a:active { background-color: var(--color-surface-2); }
+    .social-row svg { width: 20px; height: 20px; }
+
+    /* === HEADINGS === */
+    h2 {
+        font-family: var(--font-family-serif);
+        font-size: 24px;
+        font-weight: normal;
+        color: var(--color-emphasized);
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 4px;
+        margin: 28px 0 16px;
+    }
+
+    ul {
+        margin: 0 0 16px 24px;
+        font-size: 16px;
+    }
+    li { margin-bottom: 6px; }
+
+    /* Quote Box */
+    .quote {
+        border-left: 3px solid var(--color-progressive);
+        background-color: #eaf3ff;
+        padding: 12px 16px;
+        font-style: italic;
+        margin: 16px 0;
+        font-size: 15px;
+        color: var(--color-base);
+    }
+
+</style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="minerva-header">
+        <div class="header-left">
+            <!-- Hamburger Menu -->
+            <div class="icon-btn">
+                <svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </div>
+            <!-- Original Wikipedia Logo (W + Puzzle) -->
+            <div class="brand-logo">
+                <svg viewBox="0 0 200 30" xmlns="http://www.w3.org/2000/svg">
+                    <text x="0" y="24" font-family="'Linux Libertine', Georgia, serif" font-size="26" fill="#202122" font-weight="bold">W</text>
+                    <text x="28" y="22" font-family="'Linux Libertine', Georgia, serif" font-size="15" fill="#202122" letter-spacing="1">IKIPEDIA</text>
+                    <g transform="translate(130, 2) scale(0.4)">
+                        <circle cx="30" cy="30" r="26" fill="#fff" stroke="#54595d" stroke-width="2"/>
+                        <path d="M10,15 Q30,5 50,15 T50,45 Q30,55 10,45 T10,15" fill="none" stroke="#3366cc" stroke-width="3"/>
+                        <path d="M15,30 Q30,40 45,30" fill="none" stroke="#c8ccd1" stroke-width="2"/>
+                        <path d="M30,5 V55" fill="none" stroke="#c8ccd1" stroke-width="2"/>
+                        <circle cx="30" cy="30" r="5" fill="#3366cc"/>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="header-right">
+            <!-- Search Icon -->
+            <div class="icon-btn">
+                <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            </div>
+            <!-- Profile/User Icon -->
+            <div class="icon-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- TITLE -->
+    <div class="page-title-container">
+        <h1>
+            MD. SHAKIB AHMED
+            <!-- Verified Blue Tick -->
+            <svg class="verified-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10.58 16.47L6.84 12.73L8.25 11.32L10.57 13.64L15.75 8.46L17.16 9.87L10.58 16.47Z" fill="#1877F2"/>
+                <path d="M10.58 16.47L17.16 9.87L15.75 8.46L10.57 13.64L8.25 11.32L6.84 12.73L10.58 16.47Z" fill="white"/>
+            </svg>
+        </h1>
+    </div>
+
+    <!-- TABS -->
+    <div class="page-tabs">
+        <div class="tab active">Article</div>
+        <div class="tab">Talk</div>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="page-actions">
+        <div class="action-left">
+            <svg style="width:18px; height:18px; fill:var(--color-subtle);" viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg> A
+        </div>
+        <div class="action-right">
+            <!-- Bookmark -->
+            <svg style="width:22px; height:22px; fill:var(--color-subtle);" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+            <!-- Edit -->
+            <svg style="width:22px; height:22px; fill:var(--color-subtle);" viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+            <!-- Download -->
+            <svg style="width:22px; height:22px; fill:var(--color-subtle);" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+        </div>
+    </div>
+
+    <!-- HATNOTES -->
+    <div class="hatnote">
+        <p>"Shakib Ahmed" redirects here. For other uses, see <a href="#">Shakib Ahmed (disambiguation)</a>.</p>
+        <p>In this <a href="#">Bangladeshi name</a>, the first or maternal family name is <i>Ahmed</i> and the second or paternal family name is <i>Sakib</i>.</p>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content">
+        
+        <!-- INFOBOX -->
+        <table class="infobox">
+            <tr>
+                <td colspan="2" class="title-row">
+                    MD. SHAKIB AHMED
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="image-row">
+                    <!-- 🔽 এখানে আপনার ছবির লিংক বসান -->
+                    <img src="https://via.placeholder.com/180x220/e8e8e8/54595d?text=MD+SHAKIB+AHMED" alt="MD. SHAKIB AHMED">
+                    <div class="caption">Shakib Ahmed in 2024</div>
+                </td>
+            </tr>
+            <tr>
+                <th>Born</th>
+                <td>মোঃ সাকিব আহমেদ<br>11 May 2004<br><a href="#">Sirajganj</a>, <a href="#">Bangladesh</a></td>
+            </tr>
+            <tr>
+                <th>Nationality</th>
+                <td>Bangladeshi</td>
+            </tr>
+            <tr>
+                <th>Education</th>
+                <td><a href="#">Govt. Akbor Ali College</a><br>(B.S.S. Degree)</td>
+            </tr>
+            <tr>
+                <th>Alma mater</th>
+                <td>H.T. Imam Degree College<br>(HSC, 2023 Batch)</td>
+            </tr>
+            <tr>
+                <th>Occupation</th>
+                <td>Student, AI Engineer, Ethical Hacker</td>
+            </tr>
+            <tr>
+                <th>Years active</th>
+                <td>2022 – present</td>
+            </tr>
+            <tr>
+                <th>Known for</th>
+                <td>AI Engineering, Hacking, Crypto Analysis</td>
+            </tr>
+            <tr>
+                <th>Religion</th>
+                <td><a href="#">Islam</a></td>
+            </tr>
+            <tr>
+                <th>Height</th>
+                <td>5&prime;5&Prime; (165 cm)</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="social-row">
+                    <!-- Facebook Icon -->
+                    <a href="https://m.facebook.com/oo.ethan.x" target="_blank" title="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.75z" fill="#1877F2"/></svg>
+                    </a>
+                    <!-- Instagram Icon -->
+                    <a href="https://instagram.com/ethan_kelin?igshid=NzZlODBkYWE4Ng==" target="_blank" title="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="#E4405F"/></svg>
+                    </a>
+                    <!-- WhatsApp Icon -->
+                    <a href="https://wa.me/+8801006318468" target="_blank" title="WhatsApp">
+                        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="#25D366"/></svg>
+                    </a>
+                    <!-- Telegram Icon -->
+                    <a href="https://t.me/OOEthan" target="_blank" title="Telegram">
+                        <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" fill="#0088cc"/></svg>
+                    </a>
+                </td>
+            </tr>
+        </table>
+
+        <!-- MAIN TEXT -->
+        <p>
+            <b>MD. SHAKIB AHMED</b><sup>[c]</sup> (born 11 May 2004) is a Bangladeshi student, AI engineer, and ethical hacker. He is currently pursuing a B.S.S. degree at <a href="#">Govt. Akbor Ali College</a>. He is widely known for his expertise in artificial intelligence, web development, and cybersecurity. Nicknamed <b>Ethan</b>,<sup>[D]</sup> he is active in the technology sector and has developed numerous efficient websites.
+        </p>
+        
+        <p>
+            Beyond technology, Shakib is a passionate enthusiast of horror shows, Bhoot FM, and anime. He also works as a cryptocurrency chart analyst. He was born and raised in <a href="#">Ullapara</a>, <a href="#">Sirajganj</a>, Bangladesh.
+        </p>
+
+        <h2>Early life and education</h2>
+        <p>
+            Shakib Ahmed was born on 11 May 2004 in <a href="#">Sirajganj</a>, Bangladesh. He completed his Secondary School Certificate (SSC) and later completed his Higher Secondary Certificate (HSC) in 2023 from <a href="#">H.T. Imam Degree College</a> (21/22 season). 
+        </p>
+        <p>
+            Currently, he is studying for his B.S.S. degree at <a href="#">Govt. Akbor Ali College</a>. He began his early education with computer training, which sparked his interest in programming and technology.
+        </p>
+
+        <h2>Career and interests</h2>
+        <p>
+            Shakib Ahmed is a skilled programmer and AI specialist. He has worked on multiple web development projects and is self-described as an AI engineer. His main areas of interest include:
+        </p>
+        <ul>
+            <li>Artificial Intelligence and machine learning</li>
+            <li>Ethical hacking and cybersecurity</li>
+            <li>Web development and programming</li>
+            <li>Crypocurrency chart analysis</li>
+        </ul>
+        
+        <p>
+            He is also an avid fan of horror shows, <i>Bhoot FM</i>, and anime.
+        </p>
+
+        <h2>Personal motto</h2>
+        <div class="quote">
+            “Work hard silently and let your success make louder noise.”
+        </div>
+
+    </div>
+
+</body>
+</html
